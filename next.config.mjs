@@ -14,6 +14,9 @@ const nextConfig = {
       },
     ],
   },
+  images: {
+    unoptimized: true, // Required for static export
+  },
   assetPrefix: "",
   basePath: "",
   output: "export",
