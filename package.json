@@ -7,7 +7,7 @@
     "build": "next build && touch out/.nojekyll && touch out/CNAME && echo 2025.ucscieee.lk > out/CNAME",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
