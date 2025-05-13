@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.no-scroll {
+    overflow: hidden !important;
+    height: 100vh !important;
+    position: fixed !important;
+    width: 100vw !important;
+}
+
+body {
+    transition: background-color 0.5s ease-in-out;
+  }
