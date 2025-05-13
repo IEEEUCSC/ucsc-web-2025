@@ -16,7 +16,6 @@ export default function Home() {
       <PastEvents />
       <Team />
       <Contact />
-      
     </>
   );
 }

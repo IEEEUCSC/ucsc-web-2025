@@ -14,8 +14,13 @@ const PastEvents = () => {
   const containerRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(0);
 
+  const screenWidth = typeof window !== "undefined" ? window.innerWidth : 1024; // fallback for SSR
+
+  const isMobile = screenWidth <= 768;
+  const divisor = isMobile ? 1 : 5;
+
   const carouselWidth =
-    (pastEvents.length * containerWidth) / 5 + pastEvents.length * 2;
+    (pastEvents.length * containerWidth) / divisor + pastEvents.length * 2;
 
   useEffect(() => {
     const updateWidth = () => {
@@ -48,24 +53,23 @@ const PastEvents = () => {
   }, []);
 
   return (
-    <section
-      className="h-[200vh] w-full wrapper"
-      ref={containerRef}
-      id="past-events"
-    >
-      <div className="sticky top-20 overflow-hidden h-fit">
+    <section className="h-[200vh] w-full wrapper" id="past-events">
+      <div className="sticky top-20 overflow-hidden h-fit" ref={containerRef}>
         <div>
-          <h3 className="text-center text-8xl font-semibold text-secondary-blue">
+          <h3 className="text-center text-4xl md:text-8xl font-semibold text-secondary-blue">
             Past Events
           </h3>
         </div>
 
-        <div className="carousel flex gap-[2px] mt-6">
+        <div
+          className="carousel flex gap-[2px] mt-6"
+          style={{ width: carouselWidth - containerWidth }}
+        >
           {pastEvents.map(({ title, summary, image, date, url }, index) => (
             <div
-              className="h-[500px] flex-shrink-0 event"
+              className="md:h-[500px] h-[600px] flex-shrink-0 event"
               key={index}
-              style={{ width: containerWidth / 5 }}
+              style={{ width: containerWidth / divisor }}
             >
               <Link href={url}>
                 <div className="px-6 py-6 space-y-2 text-secondary-blue hover:bg-secondary-white transition-colors">
@@ -75,7 +79,7 @@ const PastEvents = () => {
                   <p className="line-clamp-3 text-xs">{summary}</p>
                 </div>
 
-                <div className="bg-red-400 w-full ">
+                <div className="bg-primary-blue w-full ">
                   <Image
                     src={`/images/past-events/${image}`}
                     width={1000}
