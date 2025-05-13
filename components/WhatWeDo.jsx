@@ -63,16 +63,19 @@ const WhatWeDo = () => {
   }, []);
 
   return (
-    <section className="mt-20" ref={container} id="what-we-do">
-      <h3 className="text-primary-white font-semibold text-8xl text-center uppercase">
+    <section className="mt-20 md:px-0 px-4" ref={container} id="what-we-do">
+      <h3 className="text-primary-white font-semibold md:text-8xl text-4xl md:text-center uppercase">
         What we do
       </h3>
 
-      <div className="gap-12 flex flex-col items-center justify-center py-28">
+      <div className="gap-12 flex flex-col items-center justify-center md:py-28 py-10">
         {whatweDo.map(({ title, description, image, imageAlt }, index) => (
-          <div className="flex  group w-[1100px] h-[70vh] gap-8" key={index}>
-            <div className="text-secondary-white w-full space-y-16 overflow-hidden py-10">
-              <span className="text-6xl font-light uppercase parallax-title inline-block">
+          <div
+            className="flex flex-col md:flex-row  group md:w-[1100px] w-full h-[70vh] gap-8"
+            key={index}
+          >
+            <div className="text-secondary-white w-full md:space-y-16 space-y-8 overflow-hidden py-10">
+              <span className="md:text-6xl text-3xl font-light uppercase parallax-title inline-block">
                 {title}
               </span>
               <p className="w-[250px] text-neutral-400">{description}</p>

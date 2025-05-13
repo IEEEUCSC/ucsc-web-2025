@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <main className="h-[300vh] relative">
       <div className="sticky top-0 hero">
-        <h1 className="uppercase font-semibold text-9xl text-primary-white w-full absolute bottom-0 z-10 px-12 hero-text">
+        <h1 className="uppercase font-semibold md:text-9xl text-4xl text-primary-white w-full absolute bottom-32 md:bottom-0 z-10 px-6 md:px-12 hero-text">
           <span className="inline-block overflow-hidden">
             <TextReveal className="mr-8" selector="heading-1" delay={1.6}>
               welcome to

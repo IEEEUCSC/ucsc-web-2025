@@ -6,9 +6,9 @@ import AnimatedImageStack from "./helpers/AnimatedImageStack";
 
 const About = () => {
   return (
-    <section className="py-20 mt-10 relative px-16" id="about-us">
-      <div className="flex gap-8">
-        <div className="w-full h-screen overflow-hidden flex-1 sticky top-16">
+    <section className="py-20 mt-10 relative md:px-16 px-6" id="about-us">
+      <div className="flex md:flex-row flex-col gap-8">
+        <div className="w-full h-screen overflow-hidden flex-1 sticky top-16 md:flex hidden">
           <Image
             src="/images/6.jpg"
             width={2000}
@@ -18,12 +18,12 @@ const About = () => {
           />
         </div>
 
-        <div className="flex flex-col flex-1 gap-6 w-1/2">
+        <div className="flex flex-col flex-1 gap-6 md:w-1/2 w-full">
           <div className="w-full h-full bg-neutral-200 overflow-hidden whitespace-nowrap velocity-container relative">
             <AnimatedImageStack />
 
             <TextVelocityScroll
-              className="text-[150px] font-bold uppercasecase leading-none text-secondary-blue"
+              className="text-[150px] 2xl:text-[300px] font-bold uppercasecase leading-none text-secondary-blue"
               selector="velocity-1"
               container="velocity-container"
               fromX={-100}
@@ -33,7 +33,7 @@ const About = () => {
             </TextVelocityScroll>
 
             <TextVelocityScroll
-              className="text-[150px] font-bold uppercasecase leading-none text-secondary-blue"
+              className="text-[150px] 2xl:text-[300px] font-bold uppercasecase leading-none text-secondary-blue"
               selector="velocity-2"
               container="velocity-container"
               fromX={-70}
@@ -43,7 +43,7 @@ const About = () => {
             </TextVelocityScroll>
 
             <TextVelocityScroll
-              className="text-[150px] font-bold uppercasecase leading-none text-secondary-blue"
+              className="text-[150px] 2xl:text-[300px] font-bold uppercasecase leading-none text-secondary-blue"
               selector="velocity-3"
               container="velocity-container"
               fromX={-120}
@@ -53,7 +53,7 @@ const About = () => {
             </TextVelocityScroll>
 
             <TextVelocityScroll
-              className="text-[150px] font-bold uppercasecase leading-none text-secondary-blue"
+              className="text-[150px] 2xl:text-[300px] font-bold uppercasecase leading-none text-secondary-blue"
               selector="velocity-4"
               container="velocity-container"
               fromX={-10}
@@ -63,7 +63,7 @@ const About = () => {
             </TextVelocityScroll>
           </div>
 
-          <div className="space-y-4 pt-10 w-3/4 text-secondary-blue">
+          <div className="space-y-4 pt-10 md:w-3/4 w-full text-secondary-blue">
             <TextScroll className="text-lg" selector="about-1">
               The IEEE Student Branch of University of Colombo School of
               Computing was established in 2011 and has achieved great success
