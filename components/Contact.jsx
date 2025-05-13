@@ -7,23 +7,23 @@ import { contactInfo, contactExCom } from "@/utils";
 const Contact = () => {
   return (
     <section
-      className="flex flex-col items-center justify-center my-20"
+      className="flex flex-col items-center justify-center my-20 md:px-0 px-6"
       id="contact-us"
     >
-      <div className="max-w-[950px]">
+      <div className="md:max-w-[950px] max-w-full">
         <h5 className="text-secondary-blue font-medium flex gap-2 items-center">
           <div className="w-6 h-[2px] bg-secondary-blue" />
           Get in Touch
         </h5>
 
         <div className="border-b-2 border-primary-blue pb-12 pt-6">
-          <p className="text-3xl font-medium text-secondary-blue">
+          <p className="md:text-3xl text-lg font-medium text-secondary-blue">
             Connect with the IEEE Student Branch of UCSC - your gateway to
             professional growth, technical innovation, and meaningful networking
             opportunities in the field of engineering and computing. We're here
             to support your journey and welcome your inquiries.
           </p>
-          <div className="flex justify-between my-8 text-secondary-blue font-medium">
+          <div className="flex flex-col md:flex-row md:gap-0 gap-2 justify-between my-8 text-secondary-blue font-medium">
             <span className="flex gap-2">
               <MdLocationOn className="translate-y-1" />
               IEEE Student Branch of UCSC, <br />
@@ -49,7 +49,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="flex justify-between my-6">
+        <div className="flex flex-col md:flex-row md:gap-0 gap-2 justify-between my-6">
           {contactExCom.map(({ name, position, email }, index) => (
             <div
               key={index}

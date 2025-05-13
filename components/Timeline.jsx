@@ -57,11 +57,11 @@ const Timeline = () => {
               return (
                 <div
                   key={index}
-                  className="flex flex-col items-center justify-center w-full h-[400px] border-l border-l-primary-blue timeline-item"
+                  className="flex flex-col items-center justify-center w-full md:h-[400px] border-l border-l-primary-blue timeline-item"
                 >
                   <div className="flex items-center gap-x-4 py-10">
                     <div className="rounded-full bg-primary-blue aspect-square w-[10px] h-[10px] -translate-x-[5.5px]" />
-                    <div className="w-[200px] text-secondary-blue font-medium">
+                    <div className="w-[200px] text-secondary-blue font-medium hidden md:flex">
                       {date}
                     </div>
 
@@ -73,10 +73,23 @@ const Timeline = () => {
                         <span className="font-medium text-secondary-blue">
                           {subHeading}
                         </span>
+                        <span className="font-medium text-secondary-blue flex md:hidden">
+                          {date}
+                        </span>
                       </div>
 
                       <div>
                         <p className="text-secondary-blue">{description}</p>
+                      </div>
+
+                      <div className="flex md:hidden">
+                        <Image
+                          src={image}
+                          alt={title}
+                          width={1200}
+                          height={1200}
+                          className="object-cover aspect-video"
+                        />
                       </div>
                     </div>
                   </div>
@@ -86,7 +99,7 @@ const Timeline = () => {
           )}
         </div>
 
-        <div className="w-full sticky top-24 py-10 h-[400px]">
+        <div className="w-full sticky top-24 py-10 h-[400px] md:flex hidden">
           <Image
             src={timelineData[current].image}
             alt={timelineData[current].title}
