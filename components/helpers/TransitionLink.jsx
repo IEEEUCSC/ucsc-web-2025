@@ -1,73 +1,77 @@
-import Link from 'next/link';
-import { useRouter, usePathname } from 'next/navigation';
-import gsap from 'gsap';
+import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
+import gsap from "gsap";
 
 const sleep = (ms) => {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
 
-const TransitionLink = ({children, href, className,  props}) => {
-
+const TransitionLink = ({ children, href, className, props }) => {
   const router = useRouter();
   const pathname = usePathname();
 
   const timeline = gsap.timeline();
 
-  const handleAnimation = ()=>{
-    if(pathname != href){
+  const handleAnimation = () => {
+    if (pathname != href) {
+      document.body.classList.add("no-scroll"); //Disable scrolling
 
-      document.body.classList.add('no-scroll'); //Disable scrolling 
-
-      timeline.fromTo("#transition",{
-        y:"100%",
-        duration:0.75,
-      },{
-        y:"0%",
-        duration:0.75,
-        ease: "power2.in",
-      })
+      timeline.fromTo(
+        "#transition",
+        {
+          y: "100%",
+          duration: 0.75,
+        },
+        {
+          y: "0%",
+          duration: 0.75,
+          ease: "power2.in",
+        }
+      );
 
       timeline.to("#transition", {
         delay: 0.5,
-        y:"-100%",
-        duration:0.75,
+        y: "-100%",
+        duration: 0.75,
         ease: "power2.out",
-        onComplete: ()=>{document.body.classList.remove('no-scroll')} //enable scrolling
-      })
-  }}
+        onComplete: () => {
+          document.body.classList.remove("no-scroll");
+        }, //enable scrolling
+      });
+    }
+  };
 
-  const handleTransition = async(e) =>{
+  const handleTransition = async (e) => {
+    e.preventDefault();
 
-      e.preventDefault();
+    if (href.startsWith("#")) {
+      const targetElement = document.querySelector(href);
 
-      if (href.startsWith('#')) {
-        const targetElement = document.querySelector(href);
-        
-        if (targetElement) {
-          // Scroll to the element instead of reloading
-          targetElement.scrollIntoView({ behavior: 'smooth' });
-        }
-
-      } else {
-        // Regular page navigation
-        handleAnimation();
-        await sleep(1000);
-        router.push(href);
+      if (targetElement) {
+        // Scroll to the element instead of reloading
+        targetElement.scrollIntoView({ behavior: "smooth" });
       }
-  }
+    } else {
+      // Regular page navigation
+      handleAnimation();
+      await sleep(1000);
+      router.push(href);
+    }
+  };
 
   return (
     <>
-        <Link 
-            onClick={handleTransition}
-            href={href} 
-            className={className}
-            {...props}
-        >
-            {children}
-        </Link>
+      <Link
+        onClick={handleTransition}
+        href={href}
+        prefetch
+        className={className}
+        {...props}
+      >
+        {children}
+      </Link>
     </>
-  )
-}
+  );
+};
 
-export default TransitionLink
+export default TransitionLink;
