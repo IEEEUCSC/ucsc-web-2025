@@ -34,13 +34,16 @@ const Contact = () => {
               Colombo 7.
             </span>
 
-            <Link className="flex gap-2" href={`mailto:${contactInfo.email}`}>
+            <Link
+              href={`mailto:${contactInfo.email}`}
+              className="flex gap-2 hover:text-primary-blue duration-300 hover:opacity-90  transition-all ease-in-out"
+            >
               <IoMdMail className="translate-y-1" />
               {contactInfo.email}
             </Link>
 
             <Link
-              className="flex gap-2"
+              className="flex gap-2 hover:text-primary-blue duration-300 hover:opacity-90  transition-all ease-in-out"
               href={`tel:${contactInfo.contactNo.replace(/[\s()-]/g, "")}`}
             >
               <IoMdCall className="translate-y-1" />
@@ -57,7 +60,10 @@ const Contact = () => {
             >
               <span className="font-medium">{name}</span>
               <span>{position}</span>
-              <Link href={`mailto:${email}`} className="">
+              <Link
+                href={`mailto:${email}`}
+                className=" hover:text-primary-blue duration-300 hover:opacity-90  transition-all ease-in-out"
+              >
                 {email}
               </Link>
             </div>

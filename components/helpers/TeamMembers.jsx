@@ -35,22 +35,38 @@ const TeamMembers = ({ title, members }) => {
               </div>
               <div className="flex gap-4 md:text-lg text-sm">
                 {member.linkedin && (
-                  <Link href={member.linkedin} target="_blank">
+                  <Link
+                    href={member.linkedin}
+                    target="_blank"
+                    className="hover:text-primary-blue duration-300 transition-colors ease-in-out"
+                  >
                     <FaLinkedin />
                   </Link>
                 )}
                 {member.instagram && (
-                  <Link href={member.instagram} target="_blank">
+                  <Link
+                    href={member.instagram}
+                    target="_blank"
+                    className="hover:text-primary-blue duration-300 transition-colors ease-in-out"
+                  >
                     <FaInstagram />
                   </Link>
                 )}
                 {member.facebook && (
-                  <Link href={member.facebook} target="_blank">
+                  <Link
+                    href={member.facebook}
+                    target="_blank"
+                    className="hover:text-primary-blue duration-300 transition-colors ease-in-out"
+                  >
                     <FaFacebook />
                   </Link>
                 )}
                 {member.email && (
-                  <Link href={`mailto:${member.email}`} target="_blank">
+                  <Link
+                    href={`mailto:${member.email}`}
+                    target="_blank"
+                    className="hover:text-primary-blue duration-300 transition-colors ease-in-out"
+                  >
                     <FaEnvelope />
                   </Link>
                 )}
