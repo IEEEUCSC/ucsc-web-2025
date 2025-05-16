@@ -34,19 +34,19 @@ const TeamMembers = ({ title, members }) => {
                 <span className="text-secondary-blue">{member.position}</span>
               </div>
               <div className="flex gap-4 md:text-lg text-sm">
-                <Link href={`${member.linkedin}`}>
+                <Link href={`${member.linkedin}`} target="_blank">
                   <FaLinkedin />
                 </Link>
 
-                <Link href={`${member.instagram}`}>
+                <Link href={`${member.instagram}`} target="_blank">
                   <FaInstagram />
                 </Link>
 
-                <Link href={`${member.facebook}`}>
+                <Link href={`${member.facebook}`} target="_blank">
                   <FaFacebook />
                 </Link>
 
-                <Link href={`${member.email}`}>
+                <Link href={`mailto:${member.email}`} target="_blank">
                   <FaEnvelope />
                 </Link>
               </div>

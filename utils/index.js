@@ -77,9 +77,9 @@ export const ieeeURL = "https://www.ieee.org/";
 export const contactInfo = {
   email: "ucscieee@gmail.com",
   contactNo: "+94 112 843 687",
-  instagram: "/",
-  facebook: "/",
-  linkedin: "/",
+  instagram: "https://www.instagram.com/ucsc.ieee/?igshid=138jsgkp9rjmz",
+  facebook: "https://www.facebook.com/IEEE.UCSC/",
+  linkedin: "https://www.linkedin.com/company/ucscieeesb/",
 };
 
 // --------------------------------------------
