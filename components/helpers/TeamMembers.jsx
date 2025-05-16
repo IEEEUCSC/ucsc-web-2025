@@ -27,28 +27,33 @@ const TeamMembers = ({ title, members }) => {
                 width={1200}
                 height={1200}
                 alt={member.name}
-                className="md:w-[230px] md:h-[350px] w-[180px] h-[200px] object-cover grayscale hover:grayscale-0 transition-all"
+                className="md:w-[230px] md:h-[350px] w-[180px] h-[200px] object-cover grayscale hover:grayscale-0  transition-all duration-600 ease-in-out "
               />
               <div className="md:text-base text-xs">
                 <p className="font-medium text-secondary-blue">{member.name}</p>
                 <span className="text-secondary-blue">{member.position}</span>
               </div>
               <div className="flex gap-4 md:text-lg text-sm">
-                <Link href={`${member.linkedin}`} target="_blank">
-                  <FaLinkedin />
-                </Link>
-
-                <Link href={`${member.instagram}`} target="_blank">
-                  <FaInstagram />
-                </Link>
-
-                <Link href={`${member.facebook}`} target="_blank">
-                  <FaFacebook />
-                </Link>
-
-                <Link href={`mailto:${member.email}`} target="_blank">
-                  <FaEnvelope />
-                </Link>
+                {member.linkedin && (
+                  <Link href={member.linkedin} target="_blank">
+                    <FaLinkedin />
+                  </Link>
+                )}
+                {member.instagram && (
+                  <Link href={member.instagram} target="_blank">
+                    <FaInstagram />
+                  </Link>
+                )}
+                {member.facebook && (
+                  <Link href={member.facebook} target="_blank">
+                    <FaFacebook />
+                  </Link>
+                )}
+                {member.email && (
+                  <Link href={`mailto:${member.email}`} target="_blank">
+                    <FaEnvelope />
+                  </Link>
+                )}
               </div>
             </div>
           ))}
