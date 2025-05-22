@@ -33,8 +33,8 @@ export default function RootLayout({ children }) {
           className={`${raveo.variable} font-[family-name:var(--font-raveo)] antialiased bg-primary-white font-light selection:bg-primary-blue selection:text-secondary-white`}
         >
           <div className="">
-            {/* <Transition />
-            <PreLoader /> */}
+            <Transition />
+            <PreLoader />
             <Navbar />
 
             {children}
