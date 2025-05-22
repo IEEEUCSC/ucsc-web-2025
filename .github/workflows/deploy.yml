@@ -27,7 +27,7 @@ jobs:
       - name: Build (Static Export)
         run: |
           npm run build
-          echo 2025.ucscieee.lk > out/CNAME
+          echo ucscieee.lk > out/CNAME
           touch out/.nojekyll
 
       - name: Deploy to GitHub Pages
